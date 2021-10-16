@@ -74,8 +74,8 @@ fn score_clangd(_env: &Env, pattern: String, source: String)
 ///
 /// (fn PATTERN SOURCE)
 #[defun]
-fn ndices_skim(env: &Env, pattern: String, source: String)
-               -> Result<Option<Value<'_>>> {
+fn indices_skim(env: &Env, pattern: String, source: String)
+                -> Result<Option<Value<'_>>> {
     if let Some(val) = find_indices_into_lisp(env,
                                               fuzzy_indices_skim,
                                               &pattern,
@@ -85,7 +85,6 @@ fn ndices_skim(env: &Env, pattern: String, source: String)
         return Ok(None)
     }
 }
-
 
 /// Find the indices for a PATTERN matching SOURCE, using clangd's fuzzy algorithm.
 ///

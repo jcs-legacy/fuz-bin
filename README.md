@@ -1,35 +1,31 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-# sublime-fuzzy
+# fuz-bin
 > Fuzzy matching algorithm based on Sublime Text's string search
 
-[![CI](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/test.yml)
-[![Build](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-elpa/sublime-fuzzy/actions/workflows/build.yml)
+[![CI](https://github.com/jcs-elpa/fuz-bin/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/fuz-bin/actions/workflows/test.yml)
+[![Build](https://github.com/jcs-elpa/fuz-bin/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-elpa/fuz-bin/actions/workflows/build.yml)
 
-Build [sublime_fuzzy](https://github.com/Schlechtwetterfront/fuzzy-rs) in Rust
-to Emacs loadable binaries.
-
-This is the same with [flx](https://github.com/lewang/flx) created by [lewang](https://github.com/lewang/),
-but this is powered by pre-built binaries using [Emacs Dynamic Modules](https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html).
-You might consider using this package if you want some performance gained!
+Same with [fuz.el](https://github.com/rustify-emacs/fuz.el) but with pre-built binaries.
 
 ## 🔨 Usage
 
 Load by calling the following function,
 
 ```el
-(sublime-fuzzy-load-dyn)
+(fuz-bin-load-dyn)
 ```
 
 Calculate the score with `PATTERN` and `SOURCE`:
 
 ```el
-(sublime-fuzzy-score "something" "some else thing")
+(fuz-bin-score "something" "some else thing")
 ```
 
 ## 🔗 References
 
-* https://crates.io/crates/sublime_fuzzy/0.2.0
+* https://github.com/lotabout/fuzzy-matcher
+* https://github.com/rustify-emacs/fuz.el
 
 ## Contribution
 

@@ -9,7 +9,7 @@
 ;; Description: Fast and precise fuzzy scoring/matching utils.
 ;; Keyword: lisp
 ;; Version: 1.5.0
-;; Package-Requires: ((emacs "25.1"))
+;; Package-Requires: ((emacs "26.1"))
 ;; URL: https://github.com/jcs-elpa/fuz-bin
 
 ;; This file is NOT part of GNU Emacs.
@@ -35,6 +35,7 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'subr-x)
 
 (defconst fuz-bin--bin-dir
   (concat (file-name-directory load-file-name) "bin/")
@@ -61,7 +62,7 @@
 
 Sign: (-> Str Str (Option (Listof Long)))
 
-Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
+Return (SCORE . (INDICES)) if matched, otherwise return nil."
   (if-let* ((total-score (fuz-bin-dyn-score-skim pattern str)))
       (cons total-score (fuz-bin-dyn-indices-skim pattern str))
     nil))
@@ -71,7 +72,7 @@ Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
 
 Sign: (-> Str Str (Option (Listof Long)))
 
-Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
+Return (SCORE . (INDICES)) if matched, otherwise return nil."
   (if-let* ((total-score (fuz-bin-dyn-score-clangd pattern str)))
       (cons total-score (fuz-bin-dyn-indices-clangd pattern str))
     nil))

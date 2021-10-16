@@ -1,5 +1,6 @@
 ;;; fuz-bin.el --- Fast and precise fuzzy scoring/matching utils  -*- lexical-binding: t; -*-
 
+;; Copyright (C) 2019 Zhu Zihao
 ;; Copyright (C) 2021  Shen, Jen-Chieh
 ;; Created date 2021-10-15 01:03:01
 

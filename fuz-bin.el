@@ -3,10 +3,11 @@
 ;; Copyright (C) 2021  Shen, Jen-Chieh
 ;; Created date 2021-10-15 01:03:01
 
-;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
+;; Author: Zhu Zihao <all_but_last@163.com>
+;;         Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Description: Fast and precise fuzzy scoring/matching utils.
 ;; Keyword: lisp
-;; Version: 0.1.0
+;; Version: 1.5.0
 ;; Package-Requires: ((emacs "25.1"))
 ;; URL: https://github.com/jcs-elpa/fuz-bin
 

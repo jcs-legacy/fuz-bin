@@ -59,6 +59,29 @@
 (defalias 'fuz-bin-find-indices-clangd #'fuz-bin-dyn-find-indices-clangd)
 (defalias 'fuz-bin-find-indices-skim #'fuz-bin-dyn-find-indices-skim)
 
+;;
+;; (@* "Utils" )
+;;
+
+(defsubst fuz-bin-score-skim (pattern str)
+  "Match STR against PATTERN, using skim's algorithm.
+
+Sign: (-> Str Str (Option (Listof Long)))
+
+Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
+  (if-let* ((total-score (fuz-calc-score-skim pattern str)))
+      (cons total-score (fuz-find-indices-skim pattern str))
+    nil))
+
+(defsubst fuz-bin-score-clangd (pattern str)
+  "Match STR against PATTERN, using clangd's algorithm.
+
+Sign: (-> Str Str (Option (Listof Long)))
+
+Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
+  (if-let* ((total-score (fuz-calc-score-clangd pattern str)))
+      (cons total-score (fuz-find-indices-clangd pattern str))
+    nil))
 
 ;;
 ;; (@* "Bootstrap" )

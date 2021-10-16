@@ -47,19 +47,19 @@
 ;; (@* "Externals" )
 ;;
 
-(declare-function fuz-bin-dyn-calc-score-clangd "fuz-bin-dyn")
-(declare-function fuz-bin-dyn-calc-score-skim "fuz-bin-dyn")
-(declare-function fuz-bin-dyn-find-indices-clangd "fuz-bin-dyn")
-(declare-function fuz-bin-dyn-find-indices-skim "fuz-bin-dyn")
+(declare-function fuz-bin-dyn-score-clangd "fuz-bin-dyn")
+(declare-function fuz-bin-dyn-score-skim "fuz-bin-dyn")
+(declare-function fuz-bin-dyn-indices-clangd "fuz-bin-dyn")
+(declare-function fuz-bin-dyn-indices-skim "fuz-bin-dyn")
 
 ;;
 ;; (@* "Aliases" )
 ;;
 
-(defalias 'fuz-bin-calc-score-clangd #'fuz-bin-dyn-calc-score-clangd)
-(defalias 'fuz-bin-calc-score-skim #'fuz-bin-dyn-calc-score-skim)
-(defalias 'fuz-bin-find-indices-clangd #'fuz-bin-dyn-find-indices-clangd)
-(defalias 'fuz-bin-find-indices-skim #'fuz-bin-dyn-find-indices-skim)
+(defalias 'fuz-bin-score-clangd #'fuz-bin-dyn-score-clangd)
+(defalias 'fuz-bin-score-skim #'fuz-bin-dyn-score-skim)
+(defalias 'fuz-bin-indices-clangd #'fuz-bin-dyn-indices-clangd)
+(defalias 'fuz-bin-indices-skim #'fuz-bin-dyn-indices-skim)
 
 ;;
 ;; (@* "Utils" )
@@ -71,8 +71,8 @@
 Sign: (-> Str Str (Option (Listof Long)))
 
 Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
-  (if-let* ((total-score (fuz-calc-score-skim pattern str)))
-      (cons total-score (fuz-find-indices-skim pattern str))
+  (if-let* ((total-score (fuz-bin-score-skim pattern str)))
+      (cons total-score (fuz-bin-indices-skim pattern str))
     nil))
 
 (defsubst fuz-bin-score-clangd (pattern str)
@@ -81,8 +81,8 @@ Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
 Sign: (-> Str Str (Option (Listof Long)))
 
 Return (SCORE . (INDICES)) if matched, otherwise return `nil'."
-  (if-let* ((total-score (fuz-calc-score-clangd pattern str)))
-      (cons total-score (fuz-find-indices-clangd pattern str))
+  (if-let* ((total-score (fuz-bin-score-clangd pattern str)))
+      (cons total-score (fuz-bin-indices-clangd pattern str))
     nil))
 
 ;;

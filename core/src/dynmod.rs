@@ -17,7 +17,7 @@ fn calc_fuzz_score_clangd(pat: &str, source: &str) -> Option<i64> {
 }
 
 fn find_indices_into_lisp<'a, F>(env: &'a Env, fun: F, pat: &str, source: &str)
-                        -> Option<Vec<Value<'a>>>
+                                 -> Option<Vec<Value<'a>>>
 where
     F: Fn(&str, &str) -> Option<(i64, Vec<usize>)>,
 {
@@ -46,8 +46,8 @@ where
 ///
 /// (fn PATTERN SOURCE)
 #[defun]
-fn calc_score_skim(_env: &Env, pattern: String, source: String)
-                   -> Result<Option<i64>> {
+fn score_skim(_env: &Env, pattern: String, source: String)
+              -> Result<Option<i64>> {
     Ok(calc_fuzz_score_skim(&pattern, &source))
 }
 
@@ -59,8 +59,8 @@ fn calc_score_skim(_env: &Env, pattern: String, source: String)
 ///
 /// (fn PATTERN SOURCE)
 #[defun]
-fn calc_score_clangd(_env: &Env, pattern: String, source: String)
-                     -> Result<Option<i64>> {
+fn score_clangd(_env: &Env, pattern: String, source: String)
+                -> Result<Option<i64>> {
     Ok(calc_fuzz_score_clangd(&pattern, &source))
 }
 
@@ -74,8 +74,8 @@ fn calc_score_clangd(_env: &Env, pattern: String, source: String)
 ///
 /// (fn PATTERN SOURCE)
 #[defun]
-fn find_indices_skim(env: &Env, pattern: String, source: String)
-                      -> Result<Option<Value<'_>>> {
+fn ndices_skim(env: &Env, pattern: String, source: String)
+               -> Result<Option<Value<'_>>> {
     if let Some(val) = find_indices_into_lisp(env,
                                               fuzzy_indices_skim,
                                               &pattern,
@@ -95,8 +95,8 @@ fn find_indices_skim(env: &Env, pattern: String, source: String)
 ///
 /// (fn PATTERN SOURCE)
 #[defun]
-fn find_indices_clangd(env: &Env, pattern: String, source: String)
-                        -> Result<Option<Value<'_>>> {
+fn indices_clangd(env: &Env, pattern: String, source: String)
+                  -> Result<Option<Value<'_>>> {
     if let Some(val) = find_indices_into_lisp(env,
                                               fuzzy_indices_clangd,
                                               &pattern,

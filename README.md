@@ -19,9 +19,8 @@ Load by calling the following function,
 Calculate the score with `PATTERN` and `SOURCE`:
 
 ```el
-(fuz-bin-calc-score-clangd "something" "some else thing")
-(fuz-bin-calc-score-skim "something" "some else thing")
-(fuz-bin-calc-score-skim "something" "some else thing")
+(fuz-bin-score-skim "something" "some else thing")
+(fuz-bin-score-clangd "something" "some else thing")
 ```
 
 ## 🔗 References

@@ -1,0 +1,19 @@
+[package]
+name = "fuz-bin"
+version = "0.1.0"
+authors = ["Jen-Chieh Shen <jcs090218@gmail.com>"]
+edition = "2018"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+name = "fuz_bin_dyn"
+crate-type = ["cdylib"]
+
+[dependencies]
+emacs = "0.17"
+fuzzy-matcher = "0.2.1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"

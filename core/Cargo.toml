@@ -12,7 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 emacs = "0.17"
-fuzzy-matcher = "0.2.1"
+fuzzy-matcher = "0.3.7"
 
 [profile.release]
 opt-level = 3

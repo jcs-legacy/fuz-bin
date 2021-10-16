@@ -7,7 +7,7 @@ on:
   pull_request:
 
 env:
-  DYN_NAME: sublime_fuzzy_dyn
+  DYN_NAME: fuz_bin_dyn
 
 jobs:
   build:

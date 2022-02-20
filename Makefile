@@ -3,9 +3,9 @@ SHELL := /usr/bin/env bash
 EMACS ?= emacs
 CASK ?= cask
 
-PKG-FILES := 8comic.el
+PKG-FILES := fuz-bin.el
 
-TEST-FILES := $(shell ls test/8comic-*.el)
+TEST-FILES := $(shell ls test/fuz-bin-*.el)
 
 .PHONY: clean checkdoc lint build compile unix-test
 

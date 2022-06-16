@@ -2,6 +2,9 @@
          "1.5.0"
          "Fast and precise fuzzy scoring/matching utils")
 
+(website-url "https://github.com/jcs-elpa/fuz-bin")
+(keywords "lisp")
+
 (package-file "fuz-bin.el")
 
 (source "melpa")

@@ -81,8 +81,8 @@ Return (SCORE . (INDICES)) if matched, otherwise return nil."
 ;;
 
 ;;;###autoload
-(defun fuz-bin-load-dyn ()
-  "Load dynamic module."
+(defun fuz-bin-load-dyn (&optional quiet)
+  "Load dynamic module. Optional QUIET argument to disable load message."
   (interactive)
   (unless (featurep 'fuz-bin-dyn)
     (let* ((dyn-name (cl-case system-type
@@ -91,7 +91,8 @@ Return (SCORE . (INDICES)) if matched, otherwise return nil."
                        (t (concat "lib" fuz-bin--dyn-name ".so"))))
            (dyn-path (concat fuz-bin--bin-dir dyn-name)))
       (module-load dyn-path)
-      (message "[INFO] Successfully load dynamic module, `%s`" dyn-name))))
+      (unless quiet
+       (message "[INFO] Successfully load dynamic module, `%s`" dyn-name)))))
 
 (provide 'fuz-bin)
 ;;; fuz-bin.el ends here

@@ -4,8 +4,8 @@
 # fuz-bin
 > Fuzzy matching algorithm based on Sublime Text's string search
 
-[![CI](https://github.com/jcs-elpa/fuz-bin/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/fuz-bin/actions/workflows/test.yml)
-[![Build](https://github.com/jcs-elpa/fuz-bin/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-elpa/fuz-bin/actions/workflows/build.yml)
+[![CI](https://github.com/jcs-legacy/fuz-bin/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-legacy/fuz-bin/actions/workflows/test.yml)
+[![Build](https://github.com/jcs-legacy/fuz-bin/actions/workflows/build.yml/badge.svg)](https://github.com/jcs-legacy/fuz-bin/actions/workflows/build.yml)
 
 Same with [fuz.el](https://github.com/rustify-emacs/fuz.el) but with pre-built binaries.
 

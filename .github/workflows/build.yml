@@ -51,14 +51,14 @@ jobs:
 
       - name: Upload binaries
         if: runner.os != 'Windows'
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.DYN_NAME }}.${{ matrix.ext }}
           path: core/target/release/lib${{ env.DYN_NAME }}.${{ matrix.ext }}
 
       - name: Upload binaries
         if: runner.os == 'Windows'
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.DYN_NAME }}.${{ matrix.ext }}
           path: core/target/release/${{ env.DYN_NAME }}.${{ matrix.ext }}

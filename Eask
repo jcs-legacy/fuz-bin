@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "fuz-bin"
          "1.5.0"
          "Fast and precise fuzzy scoring/matching utils")
